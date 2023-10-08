@@ -31,4 +31,6 @@ int main(){
     }
 
     std::cout<<"Final string: "<<str<<std::endl;
+
+    return 0;
 }
