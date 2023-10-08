@@ -1,6 +1,11 @@
 #include <iostream>
 #include <string>
 
+// 2. Create a C++ program that takes a user input string and two integer indices 
+// (start and end). Use the substr function to extract a substring from the input 
+// string starting from the start index and ending at the end index (inclusive). 
+// Print the extracted substring.
+
 int main(){
     std::string str;
     int start;
