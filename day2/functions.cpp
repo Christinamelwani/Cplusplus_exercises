@@ -1,3 +1,7 @@
+/* Write a C++ function named calculateSum that takes two integers as arguments and
+returns their sum. 
+Call this function from your main function and print the result. */
+
 #include <iostream>
 #include <string>
 
