@@ -2,6 +2,7 @@
 Declare an integer array named myArray with a size of 5 and initialize it with values 
 1, 2, 3, 4, and 5 using a loop. Print the contents of the array.
 */
+
 #include <iostream>
 #include <array>
 
