@@ -1,18 +1,21 @@
 #include <iostream>
-
 using namespace std;
 
-void sum(int arr1[], int arr2[]){
-    int temp[5];
-    for(int i=0; i<5; i++){
-        temp[i] = arr1[i]+arr2[i];
-        cout<<temp[i]<<endl;
-    }
+template <class T>
+void Swap (T &x, T &y) {
+T temp = x;
+x = y;
+y = temp;
 }
 
-int main(){
-    int a[5] = {10, 20, 30, 40 ,50};
-    int b[5] = {1, 2, 3, 4, 5};
-    sum(a, b);
-    return 0;
+int main() {
+double x = 4.50, y = 7.54;
+cout << "X = " << x << " Y = " << y << endl;
+Swap( x, y);
+cout << "X = " << x << " Y = " << y << endl;
+int p = 25, q = 10;
+cout << "P = " << p << " Q = " << q << endl;
+Swap( p, q);
+cout << "P = " << p << " Q = " << q << endl;
+return 0;
 }
