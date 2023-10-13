@@ -1,9 +1,11 @@
 #include <string>
 using namespace std;
 class User{
+    public:
+    string username;
+
     private:
     string email;
-    string username;
     string password;
 
     public:
