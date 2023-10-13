@@ -1,7 +1,6 @@
 
 #include <string>
 #include <iostream>
-#include "User.h"
 
 using namespace std;
 
@@ -37,11 +36,11 @@ class Book{
     }
 
     string get_author() const{
-        return title;
+        return author;
     }
 
     string get_isbn() const{
-        return title;
+        return isbn;
     }
 
     string get_title() const{

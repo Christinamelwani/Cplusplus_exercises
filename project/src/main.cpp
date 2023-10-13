@@ -1,4 +1,6 @@
 #include <iostream>
+#include "User.h"
+#include "Library.h"
 #include "Library.cpp"
 
 using namespace std;
