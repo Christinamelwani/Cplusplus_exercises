@@ -16,7 +16,8 @@ void save_books_to_file(const Library &library, const string &filename) {
 
     if (file.is_open()) {
         for (const Book &book : library.get_books()) {
-            file << book.get_title() << "," << book.get_author() << "," << book.get_isbn() << endl;
+            file << book.get_title() << "," << book.get_author() << "," << book.get_isbn() << "," 
+            << (book.is_available() ? "available" : " borrowed") << "," << book.borrower_username <<endl;
         }
         file.close();
     } else {
@@ -31,11 +32,13 @@ void load_books_from_file(Library &library, const string &filename) {
         string line;
         while (getline(file, line)) {
             istringstream ss(line);
-            string title, author, isbn;
+            string title, author, isbn, available, user;
             getline(ss, title, ',');
             getline(ss, author, ',');
             getline(ss, isbn, ',');
-            Book new_book(title, author, isbn);
+            getline(ss, available, ',');
+            getline(ss, user, ',');
+            Book new_book(title, author, isbn, available, user);
             library.add_book(new_book);
         }
         file.close();
@@ -115,6 +118,8 @@ void show_main_menu(User user) {
     int option;
     Library library;
 
+    load_books_from_file(library, "/Users/christinamelwani/Desktop/Binus Online Learning/cpp/project/data/books.csv");
+
     while (option != OPTION_EXIT) {
         cout << "Welcome to the library!" << endl;
         cout << "Would you like to:" << endl;
@@ -143,6 +148,7 @@ void show_main_menu(User user) {
                 display_availability(library);
                 break;
             case OPTION_EXIT:
+                save_books_to_file(library, "/Users/christinamelwani/Desktop/Binus Online Learning/cpp/project/data/books.csv");
                 break;
             default:
                 cout << "Invalid option. Please try again." << endl;

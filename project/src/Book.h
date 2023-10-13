@@ -17,10 +17,14 @@ class Book{
 
     public:
     Book(string t, string a, string i):title(t), author(a), isbn(i), available(true){};
+    Book(string t, string a, string i, string av, string user):title(t), author(a), isbn(i){
+        av == "available" ? available = true : available = false;
+        borrower_username = user;
+    };
     string get_details(){
         return title + " by " + author + ", ISBN: " + isbn;
     }
-    bool is_available(){
+    bool is_available() const{
         return available;
     }
     void borrow(User user){
